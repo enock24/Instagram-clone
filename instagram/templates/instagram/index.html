@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 <div class="container">
+   
     {% for image in images %}
     <div class="row">
         <div class=" col-md-3 ">
@@ -49,6 +50,8 @@
                 </div>
                 <div class="modal-body text-center">
                     <img src="{{image.image.url}}" alt="" width="100%" height="100%">
+                    <!-- <img src="{{image.profile.profile_image.url}}" alt="" width="100%" height="100%"> -->
+                    
                 </div>
                 <div class="modal-footer">
 

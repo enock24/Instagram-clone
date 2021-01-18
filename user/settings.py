@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import os
 from pathlib import Path
+# import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,8 +39,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-   #first add
+    'instagram.apps.InstagramConfig',
+    'django_registration',
+    # 'staticfiles',
+#     'django.contrib.admin',
+    'crispy_forms',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     # 'whitenoise.runserver_nostatic',
+#     'django.contrib.staticfiles',
+#     'django_registration',
+#    #first add
+#     'instagram',
     'bootstrap3', 
+
+   
+    
+
 ]
 
 MIDDLEWARE = [
@@ -120,3 +139,25 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+LOGIN_REDIRECT_URL = 'index'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+
+LOGOUT_REDIRECT_URL = 'login'
+
+LOGIN_REDIRECT_URL = 'index'
+
+django_heroku.settings(locals())
+
+cloudinary.config( 
+  cloud_name = "towett-enock-k", 
+  api_key = "189579317859654", 
+  api_secret = "cMQCXz6-RYZDhubJmA7dX3TdJsU" 
+)
+
