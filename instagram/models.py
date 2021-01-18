@@ -1,10 +1,12 @@
 from django.db import models
 from django.utils import timezone
+import cloudinary
+from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
 # Create your models here.
 class Image(models.Model):
-    image = models.ImageField(upload_to='images/', blank=True)
+    image = CloudinaryField('images', blank=True)
     image_name = models.CharField(blank=True, max_length=30)
     image_caption = models.CharField(blank=True, max_length=500)
     user = models.ForeignKey(User,on_delete=models.CASCADE)

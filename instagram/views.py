@@ -10,6 +10,7 @@ from django.contrib.auth import login
 @login_required(login_url='/accounts/login/')
 def index(request):
     images=Image.objects.all()
+    print("our images",images)
     comments=Comments.objects.all()
     profile = Profile.objects.all()
     return render(request,'instagram/index.html',{"images":images,"comments":comments, "profile":profile})
