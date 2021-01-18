@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from pathlib import Path
-# import dj_database_url
+import dj_database_url
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,6 +71,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'user.urls'
@@ -155,9 +159,9 @@ LOGIN_REDIRECT_URL = 'index'
 
 # django_heroku.settings(locals())
 
-# cloudinary.config( 
-#   cloud_name = "towett-enock-k", 
-#   api_key = "189579317859654", 
-#   api_secret = "cMQCXz6-RYZDhubJmA7dX3TdJsU" 
-# )
+cloudinary.config( 
+  cloud_name = "towett-enock-k", 
+  api_key = "189579317859654", 
+  api_secret = "cMQCXz6-RYZDhubJmA7dX3TdJsU" 
+)
 
