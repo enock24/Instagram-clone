@@ -153,11 +153,11 @@ LOGOUT_REDIRECT_URL = 'login'
 
 LOGIN_REDIRECT_URL = 'index'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
-cloudinary.config( 
-  cloud_name = "towett-enock-k", 
-  api_key = "189579317859654", 
-  api_secret = "cMQCXz6-RYZDhubJmA7dX3TdJsU" 
-)
+# cloudinary.config( 
+#   cloud_name = "towett-enock-k", 
+#   api_key = "189579317859654", 
+#   api_secret = "cMQCXz6-RYZDhubJmA7dX3TdJsU" 
+# )
 
